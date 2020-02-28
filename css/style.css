@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+ 
+
+ 
+ 
+ 
+.container-all{
+    width: 100%;
+    max-width:20%;    
+    margin-right: 90%;
+    padding: 40px;
+    background: white;
+    margin-top: 100px;
+    border-radius: 10px;
+}
+ 
+.container-all h1{
+    text-align: center;
+    font-size: 40px;
+}
+ 
+.content-article{
+    margin-top: 40px;
+}
+ 
+.content-article img{
+    width: 300px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+ 
+.content-article p{
+    font-size: 16px;
+    margin-top: 20px;
+}
+ 
+ 
+.content-article input{
+    padding: 20px 60px;
+    margin-top: 20px;
+    background: #00b1ff;
+    border: none;
+    font-size: 16px;
+    border-radius: 10px;
+    
+}
+ 
+.dark-mode-button{
+        float: right;
+        margin-top: -20px;
+        left: 20px;
+        padding: 5px;
+        background: white;
+        border-radius: 20px;
+        
+}
+ 
+html.dark-mode {
+    filter: invert(80%);
+    background-color:black;
+
+}
+
+/*.form-control{
+   ;
+}*/
+ 
+html.dark-mode img{
+    filter: invert(100%);
+}
+ 
+#navbarToggleExternalContent{
+    width: 100%;
+    height: 15%;
+}
+ 
+#menu2{
+    width: 100%;
+    height: 60%;
+}
+
+
+/* PUEBA DAVID*/
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.title{
+    text-align: center;
+    font-size: 40px;
+    color: #6a6a6a;
+    margin-top: 100px;
+    font-weight: 100;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.container{
+    width: 100%;
+    max-width: 1200px;
+    height: 430px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+.container .card{
+    width: 330px;
+    height: 330px;
+    border-radius: 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 20px;
+    text-align: center;
+    transition: all 0.25s;
+}
+
+.container .card:hover{
+    transform: translateY(-15px);
+    box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.container .card img{
+    width: 330px;
+    height: 220px;
+}
+
+
+.container .card h4{
+    font-weight: 600;
+}
+
+.container .card p{
+    padding: 0 1rem;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.container .card a {
+    font-weight: 500;
+    text-decoration: none;
+    color: #3498db;
+}
+/* PUEBA DAVID*/
