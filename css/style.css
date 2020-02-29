@@ -1,16 +1,210 @@
+HEAD
+body {
+  font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+}
+
+#divid01{
+  text-align: center;
+  color: #ffff;
+  display: block;
+  background: -webkit-gradient(linear, left bottom, left top, from(#BC20D1), to(#2C23D1));
+  background: -webkit-linear-gradient(bottom, #BC20D1 0%, #2C23D1 100%);
+  background: -moz-linear-gradient(bottom, #BC20D1 0%, #2C23D1 100%);
+  background: -o-linear-gradient(bottom, #BC20D1 0%, #2C23D1 100%);
+  background: linear-gradient(to top, #BC20D1 0%, #2C23D1 100%);
+  padding: 16px;
+  border-radius: 10px;
+  width: 500px;
+  margin: auto;
+  box-shadow: 10px 15px 22px white;
+}
+
+
+
+/* Full-width input fields */
+input[type=text],
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+#info, #info2, #info4, #info5{
+  width: 50%;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #57b846;
+  color: white;
+  padding: 14px 60px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 10px;
+  font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+  font-size: 22px;
+}
+
+button:hover {
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #fbc2eb, #a18cd1);
+  background: -o-linear-gradient(45deg, #fbc2eb, #a18cd1);
+  background: -moz-linear-gradient(45deg, #fbc2eb, #a18cd1);
+  background: linear-gradient(45deg, #fbc2eb, #a18cd1);
+  opacity: 0.8;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 20%;
+  border-radius: 50%;
+}
+
+
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background: -webkit-gradient(linear, left bottom, left top, from(#BC20D1), to(#2C23D1));
+  background: -webkit-linear-gradient(bottom, #BC20D1 0%, #2C23D1 100%);
+  background: -moz-linear-gradient(bottom, #BC20D1 0%, #2C23D1 100%);
+  background: -o-linear-gradient(bottom, #BC20D1 0%, #2C23D1 100%);
+  background: linear-gradient(to top, #BC20D1 0%, #2C23D1 100%);
+  margin: 5% auto 15% auto;
+  border-radius: 10px;
+  /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%;
+  /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {
+      -webkit-transform: scale(0)
+  }
+
+  to {
+      -webkit-transform: scale(1)
+  }
+}
+
+@keyframes animatezoom {
+  from {
+      transform: scale(0)
+  }
+
+  to {
+      transform: scale(1)
+  }
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+      display: block;
+      float: none;
+  }
+
+  .cancelbtn {
+      width: 100%;
+  }
+}
+
+
 /*<<<<<<< dev-footer*/
 body {
     display: grid;
     grid-template-rows: 1fr auto;
     grid-template-areas: "main" "footer";
     overflow-x: hidden;
-    background:black;
+    background: -webkit-gradient(linear, left bottom, left top, from(#fbc2eb), to(#a18cd1));
+    background: -webkit-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
+    background: -moz-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
+    background: -o-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
+    background: linear-gradient(to top, #fbc2eb 0%, #a18cd1 100%);
     min-height: 100vh;
     font-family: 'Open Sans', sans-serif;
-  }
+}
   body .footer {
     z-index: 1;
-    --footer-background: white;
+    --footer-background: -webkit-gradient(linear, left bottom, left top, from(#fbc2eb), to(#a18cd1));
+    --footer-background: -webkit-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
+    --footer-background: -moz-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
+    --footer-background: -o-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
+    --footer-background: linear-gradient(to top, #fbc2eb 0%, #a18cd1 100%);
     display: grid;
     position: relative;
     grid-area: footer;
@@ -276,3 +470,4 @@ body{
 }
 /* PUEBA DAVID*/
 /*>>>>>>> development*/
+/*>>>>>>> fc919dca76c620f90a52f3d9858a87e76b3c44e1*/
