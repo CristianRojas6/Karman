@@ -8,31 +8,84 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
-/*
-var text = [''];
-text = document-getElementById('info').value
 
-var password = [''];
-password = document-getElementById('info2').value
 
-var pswRepeat = document.getElementById('info3').value 
-*/
-/*function redirect() {
+function redirect(name, lastName, email, passwd, repeatPasswd) {
+    
+    
+    var nombre = document.getElementById('info').value;
+    var apellido = document.getElementById('info2').value;
+    var correo = document.getElementById('info3').value;
+    var contra = document.getElementById('info4').value;
+    var repContra = document.getElementById('info5').value;
 
-    if (text == 'email' && password == 'password' && pswRepeat == 'psw-repeat'){
+    console.log(nombre);
+    console.log(apellido);
+    console.log(correo);
+    console.log(contra);
+    console.log(repContra);
+    
+    if (nombre == ''){
+
+        console.log('if1');
+        console.log(nombre);
+        alert('hola1');
+        
+
+    } else if(apellido == ''){
+
+        console.log('if2');
+        console.log(apellido);
+        alert('hola2');
+        
+    } else if (correo == ''){
+
+        console.log('if3');
+        console.log(correo);
+        alert('hola3');
+        
+
+    } else if(contra == ''){
+
+        console.log('if4');
+        console.log(contra);
+        alert('hola4');
+        
+
+    } else if(repContra == ''){
+        
+        console.log('if5');
+        console.log(repContra);
+        alert('hola5');
+        
+    } else{
+
         window.location.assign("IndexHome.html");
-    }else{
-        alert('no entre')
+        console.log('else')    
     }
     
 }
-*/
 
-function redirect(){
+function redirect2(name2, passwd2){
 
-    if (document.getElementById('info')=='email' && document.getElementById('info2')=='password' && document.getElementById('info3')=='psw-repeat'){ 
-            document.form.submit(IndexHoma.html); 
-    } else{ 
-             alert("Porfavor ingrese, nombre de usuario y contraseña correctos."); 
-    } 
+    var nombre2 = document.getElementById('info6').value;
+    var contra2 = document.getElementById('info7').value;
+
+    if (nombre2 == ''){
+
+        console.log('if6');
+        console.log(nombre2);
+        alert('hola6');
+        
+
+    } else if(contra2 == ''){
+
+        console.log('if6');
+        console.log(contra2);
+        alert('hola7');
+
+    } else{
+        window.location.assign("IndexHome.html");
+        console.log('else')    
+    }
 }

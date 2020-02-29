@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -13,56 +13,61 @@
 
 <body>
 
-    <div class="container" id="divid01">
+    <div id="divid01">
         <h2>Registrate</h2>
 
         <button onclick="document.getElementById('id01').style.display='block'" class="signupbtn"
-            style="width:auto;">Sign Up</button>
+            style="width:auto;">Registrate</button>
 
         <div id="id01" class="modal">
             <div class="imgcontainer">
-                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                <span onclick="document.getElementById('id02').style.display='none'" class="close"
                     title="Close Modal">&times;</span>
             </div>
             <form class="modal-content animate" action="/action_page.php" method="post">
                 <div class="container">
-                    <h1>Sign Up</h1>
-                    <p>Please fill in this form to create an account.</p>
+                    <h1>Crea una cuenta</h1>
+                    <p>Por favor llena los espacios para crear tu cuenta.</p>
                     <hr>
-                    <label for="email"><b>Email</b></label>
-                    <input id="info" type="text" placeholder="Enter Email" name="email" required>
+                    <div class="signup-main">
+                        <label for="name"><b></b></label>
+                        <input id="info" type="text" placeholder="Ingresa Nombre" name="name" required>
 
-                    <label for="psw"><b>Password</b></label>
-                    <input id="info2" type="password" placeholder="Enter Password" name="psw" required>
+                        <label for="lastname"><b></b></label>
+                        <input id="info2" type="text" placeholder="Ingresa Apellido" name="lastname" required>
 
-                    <label for="psw-repeat"><b>Repeat Password</b></label>
-                    <input id="info3" type="password" placeholder="Repeat Password" name="psw-repeat" required>
+                        <label for="email"><b></b></label>
+                        <input id="info3" type="text" placeholder="Ingresa Correo" name="email" required> <br>
 
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-                    </label>
+                        <label for="psw"><b></b></label>
+                        <input id="info4" type="password" placeholder="Ingresa Contraseña" name="psw" required>
+
+                        <label for="psw-repeat"><b></b></label>
+                        <input id="info5" type="password" placeholder="Repite Contraseña" name="psw-repeat" required>
+                    </div>
 
                     <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.
                     </p>
 
-                    <button type="submit" class="signupbtn" onclick="redirect()">Sign Up</button>
+                    <button id="ingresar" type="submit" class="signupbtn"
+                        onclick="redirect(info, info2, info3, info4, info5)">Ingresar</button>
 
-                    <div class="container" style="background-color:#f1f1f1">
-                        <button type="button" onclick="document.getElementById('id01').style.display='none'"
-                            class="cancelbtn">Cancel</button>
-                    </div>
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                        class="cancelbtn">Cancelar</button>
+
                 </div>
             </form>
         </div>
-        
+
 
         <!-- Login --> <br>
 
         <h2>o</h2>
         <h2>Inicia Sesion</h2>
 
-        <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;" class="loginbtn">Log
-            In</button>
+        <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"
+            class="loginbtn">Inicia Sesion
+        </button>
 
         <div id="id02" class="modal">
 
@@ -74,22 +79,27 @@
                 </div>
 
                 <div class="container">
-                    <label for="email"><b>Email</b></label>
-                    <input class="info" type="text" placeholder="Enter Email" name="email" required>
 
-                    <label class="info" for="psw"><b>Password</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
+                    <div class="signup-menu">
+                        <label for="name"><b></b></label>
+                        <input id="info6" type="text" placeholder="Ingresa Nombre" onfocus="this.value = '';"
+                            onblur="if (this.value == '')" {this.value='name' ;} name="name" required>
 
-                    <button type="submit" onclick="redirect()">Login</button>
+                        <label for="psw"><b></b></label>
+                        <input id="info7" type="password" placeholder="Ingresa Contraseña" onfocus="this.value = '';"
+                            onblur="if (this.value == '')" {this.value='psw' ;} name="psw" required>
+                    </div>
+
+                    <button type="submit" onclick="redirect2(info6, info7)">Ingresar</button>
                     <label>
                         <input type="checkbox" checked="checked" name="remember"> Remember me
                     </label>
 
                 </div>
 
-                <div class="container" style="background-color:#f1f1f1">
+                <div class="container">
                     <button type="button" onclick="document.getElementById('id02').style.display='none'"
-                        class="cancelbtn">Cancel</button>
+                        class="cancelbtn">Cancelar</button>
                 </div>
             </form>
         </div>
