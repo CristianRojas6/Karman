@@ -1,29 +1,40 @@
-HEAD
-body {
+HEAD body {
   font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
 }
 
-#divid01{
+body {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "main" "footer";
+  overflow-x: hidden;
+  background: -webkit-gradient(linear, left bottom, left top, from(#fbc2eb), to(#a18cd1));
+  min-height: 100vh;
+}
+
+/* todo el diseño que se le da al contenedor de los botones de los formularios */
+
+#divid01 {
   text-align: center;
   color: #ffff;
   display: block;
+  /* este es un kit compatible con todos los navegadores para dar un degrade al fondo, este tiene diferentes valores para asignar desde el "suelo" hasta el "cielo" */
   background: -webkit-gradient(linear, left bottom, left top, from(#BC20D1), to(#2C23D1));
-  background: -webkit-linear-gradient(bottom, #BC20D1 0%, #2C23D1 100%);
-  background: -moz-linear-gradient(bottom, #BC20D1 0%, #2C23D1 100%);
-  background: -o-linear-gradient(bottom, #BC20D1 0%, #2C23D1 100%);
-  background: linear-gradient(to top, #BC20D1 0%, #2C23D1 100%);
   padding: 16px;
+  padding-left: auto;
+  padding-right: auto;
   border-radius: 10px;
-  width: 500px;
   margin: auto;
   box-shadow: 10px 15px 22px white;
+  /* es una propiedad que sirve para dar un responsive a l objeto que se marca */
+  flex-flow: row wrap;
+  align-items: center;
+  width: 366px;
+  height: 334px;
 }
 
+/* Diseño de los espacios de ingreso */
 
-
-/* Full-width input fields */
-input[type=text],
-input[type=password] {
+input[type=text], input[type=password] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -33,30 +44,47 @@ input[type=password] {
   border-radius: 10px;
 }
 
-#info, #info2, #info4, #info5{
+#info, #info2, #info4, #info5 {
   width: 50%;
 }
 
-/* Set a style for all buttons */
-button {
+/* todo lo relacionado con el diseño de los containers de los formularios */
+.signup-main {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin: 10px;
+}
+
+.signup-main #info4, #info5 {
+  margin: 5px;
+  width: 48%;
+}
+
+.signup-main #info, #info3, #info6, #info7 {
+  width: 97%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/* Estilos para todos los botones */
+
+.botones {
   background-color: #57b846;
   color: white;
-  padding: 14px 60px;
-  margin: 8px 0;
+  padding: 10px 50px;
+  margin: 15px;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 85%;
   border-radius: 10px;
   font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
   font-size: 22px;
 }
 
-button:hover {
+.botones:hover {
   background: #a64bf4;
   background: -webkit-linear-gradient(45deg, #fbc2eb, #a18cd1);
-  background: -o-linear-gradient(45deg, #fbc2eb, #a18cd1);
-  background: -moz-linear-gradient(45deg, #fbc2eb, #a18cd1);
-  background: linear-gradient(45deg, #fbc2eb, #a18cd1);
   opacity: 0.8;
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -64,15 +92,23 @@ button:hover {
   transition: all 0.4s;
 }
 
+/* Estilos extra para los botones de cancelar */
 
-/* Extra styles for the cancel button */
 .cancelbtn {
   width: auto;
   padding: 10px 18px;
   background-color: #f44336;
+  color: white;
+  margin-top: 7px;
+  margin: 18px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
 }
 
-/* Center the image and position the close button */
+/* posicionamiento de la imagen del avatar y del boton de cerrar el formulario */
+
 .imgcontainer {
   text-align: center;
   margin: 24px 0 12px 0;
@@ -84,52 +120,39 @@ img.avatar {
   border-radius: 50%;
 }
 
-
-
 span.psw {
   float: right;
   padding-top: 16px;
 }
 
-/* The Modal (background) */
+/* El diseño del fono cuando los containers se despliegan, ellos generan una opasidad */
+
 .modal {
   display: none;
-  /* Hidden by default */
   position: fixed;
-  /* Stay in place */
   z-index: 1;
-  /* Sit on top */
   left: 0;
   top: 0;
   width: 100%;
-  /* Full width */
   height: 100%;
-  /* Full height */
   overflow: auto;
-  /* Enable scroll if needed */
   background-color: rgb(0, 0, 0);
-  /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
   padding-top: 60px;
 }
 
-/* Modal Content/Box */
+/* El diseño interno de los containers de formulario */
+
 .modal-content {
   background: -webkit-gradient(linear, left bottom, left top, from(#BC20D1), to(#2C23D1));
-  background: -webkit-linear-gradient(bottom, #BC20D1 0%, #2C23D1 100%);
-  background: -moz-linear-gradient(bottom, #BC20D1 0%, #2C23D1 100%);
-  background: -o-linear-gradient(bottom, #BC20D1 0%, #2C23D1 100%);
-  background: linear-gradient(to top, #BC20D1 0%, #2C23D1 100%);
   margin: 5% auto 15% auto;
   border-radius: 10px;
-  /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
   width: 80%;
-  /* Could be more or less, depending on screen size */
 }
 
-/* The Close Button (x) */
+/* Diseños extra para el boton de cerrar el container */
+
 .close {
   position: absolute;
   right: 25px;
@@ -139,256 +162,52 @@ span.psw {
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close:hover, .close:focus {
   color: red;
   cursor: pointer;
 }
 
-/* Add Zoom Animation */
+/* la animación del zoom de los container */
+
 .animate {
+  /* el webkit que da el tiempo de la animación */
   -webkit-animation: animatezoom 0.6s;
   animation: animatezoom 0.6s
 }
 
+/* la escala a la cual se le hace zoom al container */
 @-webkit-keyframes animatezoom {
   from {
-      -webkit-transform: scale(0)
+    -webkit-transform: scale(0)
   }
-
   to {
-      -webkit-transform: scale(1)
+    -webkit-transform: scale(1)
   }
 }
 
 @keyframes animatezoom {
   from {
-      transform: scale(0)
+    transform: scale(0)
   }
-
   to {
-      transform: scale(1)
+    transform: scale(1)
   }
 }
 
-/* Change styles for span and cancel button on extra small screens */
+/* Cambios de diseño extras para el boton de cerrar cuendo este sea responsive */
+
 @media screen and (max-width: 300px) {
   span.psw {
-      display: block;
-      float: none;
+    display: block;
+    float: none;
   }
-
   .cancelbtn {
-      width: 100%;
-  }
-}
-
-
-/*<<<<<<< dev-footer*/
-body {
-    display: grid;
-    grid-template-rows: 1fr auto;
-    grid-template-areas: "main" "footer";
-    overflow-x: hidden;
-    background: -webkit-gradient(linear, left bottom, left top, from(#fbc2eb), to(#a18cd1));
-    background: -webkit-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
-    background: -moz-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
-    background: -o-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
-    background: linear-gradient(to top, #fbc2eb 0%, #a18cd1 100%);
-    min-height: 100vh;
-    font-family: 'Open Sans', sans-serif;
-}
-  body .footer {
-    z-index: 1;
-    --footer-background: -webkit-gradient(linear, left bottom, left top, from(#fbc2eb), to(#a18cd1));
-    --footer-background: -webkit-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
-    --footer-background: -moz-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
-    --footer-background: -o-linear-gradient(bottom, #fbc2eb 0%, #a18cd1 100%);
-    --footer-background: linear-gradient(to top, #fbc2eb 0%, #a18cd1 100%);
-    display: grid;
-    position: relative;
-    grid-area: footer;
-    min-height: 12rem;
-  }
-  body .footer .bubbles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1rem;
-    background: var(--footer-background);
-    -webkit-filter: url("#blob");
-            filter: url("#blob");
- }
-  body .footer .bubbles .bubble {
-    position: absolute;
-    left: var(--position, 50%);
-    background: var(--footer-background);
-    border-radius: 100%;
-    -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
-            animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
-    -webkit-transform: translate(-50%, 100%);
-            transform: translate(-50%, 100%);
-  }
-  body .footer .content {
-    z-index: 2;
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-gap: 4rem;
-    padding: 2rem;
-    background: var(--footer-background);
-  }
-  body .footer .content a, body .footer .content p {
-    color: black;
-    text-decoration: none;
-  }
-  body .footer .content b {
-    color: white;
-  }
-  body .footer .content p {
-    margin: 0;
-    font-size: .75rem;
-  }
-  body .footer .content > div {
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-            flex-direction: column;
-    -webkit-box-pack: center;
-            justify-content: center;
-  }
-  body .footer .content > div > div {
-    margin: 0.25rem 0;
-  }
-  body .footer .content > div > div > * {
-    margin-right: .5rem;
-  }
-  body .footer .content > div .image {
-    align-self: center;
-    width: 4rem;
-    height: 4rem;
-    margin: 0.25rem 0;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  @-webkit-keyframes bubble-size {
-    0%, 75% {
-      width: var(--size, 4rem);
-      height: var(--size, 4rem);
-    }
-    100% {
-      width: 0rem;
-      height: 0rem;
-    }
-  }
-  
-  @keyframes bubble-size {
-    0%, 75% {
-      width: var(--size, 4rem);
-      height: var(--size, 4rem);
-    }
-    100% {
-      width: 0rem;
-      height: 0rem;
-    }
-  }
-  @-webkit-keyframes bubble-move {
-    0% {
-      bottom: -4rem;
-    }
-    100% {
-      bottom: var(--distance, 10rem);
-    }
-  }
-  @keyframes bubble-move {
-    0% {
-      bottom: -4rem;
-    }
-    100% {
-      bottom: var(--distance, 10rem);
-    }
-  }
-/*======= development*/
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
-
-.container-all{
     width: 100%;
-    max-width:20%;    
-    margin-right: 90%;
-    padding: 40px;
-    background: white;
-    margin-top: 100px;
-    border-radius: 10px;
-}
- 
-.container-all h1{
-    text-align: center;
-    font-size: 40px;
-}
- 
-.content-article{
-    margin-top: 40px;
-}
- 
-.content-article img{
-    width: 300px;
-    float: left;
-    margin-right: 20px;
-    margin-bottom: 20px;
-}
- 
-.content-article p{
-    font-size: 16px;
-    margin-top: 20px;
-}
- 
- 
-.content-article input{
-    padding: 20px 60px;
-    margin-top: 20px;
-    background: #00b1ff;
-    border: none;
-    font-size: 16px;
-    border-radius: 10px;
-    
-}
- 
-.dark-mode-button{
-        float: right;
-        margin-top: -20px;
-        left: 20px;
-        padding: 5px;
-        background: white;
-        border-radius: 20px;
-        
-}
- 
-html.dark-mode {
-    filter: invert(80%);
-    background-color:black;
-
+  }
 }
 
- 
-html.dark-mode img{
-    filter: invert(100%);
+@media(max-width: 300px) {
+  #divid01 {
+    margin: auto;
+  }
 }
- 
-#navbarToggleExternalContent{
-    width: 100%;
-    height: 15%;
-}
- 
-#menu2{
-    width: 100%;
-    height: 60%;
-}
-/*>>>>>>> development*/
-/*>>>>>>> fc919dca76c620f90a52f3d9858a87e76b3c44e1*/

@@ -1,91 +1,72 @@
+//function to store user name and password
+function registro() {
 
-// Get the modal
-var modal = document.getElementById('id01', 'id02');
+    var inputNombre = document.getElementById("info").value;
+    var inputCorreo = document.getElementById("info3").value;
+    var inputContra = document.getElementById("info4").value;
+    var inputRptContra = document.getElementById("info5").value;
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    var usuario = {
+        "nombre": inputNombre,
+        "correo": inputCorreo,
+        "contra": inputContra,
+        "rptcontra": inputRptContra,
     }
+
+    localStorage.setItem("nombre", inputNombre);
+    localStorage.setItem("correo", inputCorreo);
+    localStorage.setItem("contra", inputContra);
+    localStorage.setItem("rptcontra", inputRptContra);
+
+    if ((inputNombre == "")) {
+
+        alert("Ingresa tu nombre de usuario");
+
+    } else if ((inputCorreo == "")) {
+
+        alert("Ingresa tu correo");
+
+    } else if ((inputContra == "")) {
+
+        alert("Ingresa la contraseña");
+
+    } else if ((inputRptContra == "")) {
+
+        alert("Repite la contraseña");
+
+    } else if ((inputRptContra == (localStorage.getItem("contra"))) && (inputContra == (localStorage.getItem("rptcontra")))) {
+
+        location.href = "IndexHome.html";
+
+    } else {
+
+        alert("La contraseña es incompatible");
+
+    }
+
 }
 
+var inputCorreo = document.getElementById("info3").value;
+var inputContra = document.getElementById("info4").value;
 
-function redirect(name, lastName, email, passwd, repeatPasswd) {
-    
-    
-    var nombre = document.getElementById('info').value;
-    var apellido = document.getElementById('info2').value;
-    var correo = document.getElementById('info3').value;
-    var contra = document.getElementById('info4').value;
-    var repContra = document.getElementById('info5').value;
+function login() {
 
-    console.log(nombre);
-    console.log(apellido);
-    console.log(correo);
-    console.log(contra);
-    console.log(repContra);
-    
-    if (nombre == ''){
+      console.log("hola");
 
-        console.log('if1');
-        console.log(nombre);
-        alert('hola1');
-        
+    if(inputCorreo.value === null || inputCorreo === ""){
 
-    } else if(apellido == ''){
-
-        console.log('if2');
-        console.log(apellido);
-        alert('hola2');
-        
-    } else if (correo == ''){
-
-        console.log('if3');
-        console.log(correo);
-        alert('hola3');
-        
-
-    } else if(contra == ''){
-
-        console.log('if4');
-        console.log(contra);
-        alert('hola4');
-        
-
-    } else if(repContra == ''){
-        
-        console.log('if5');
-        console.log(repContra);
-        alert('hola5');
-        
-    } else{
-
-        window.location.assign("IndexHome.html");
-        console.log('else')    
+        alert("Ingresa el correo que registraste")
     }
-    
+    if(inputContra.value === null || inputContra === ""){
+
+        location.href = "IndexHome.html";
+    }
+
+
+      return false;
+
 }
 
-function redirect2(name2, passwd2){
-
-    var nombre2 = document.getElementById('info6').value;
-    var contra2 = document.getElementById('info7').value;
-
-    if (nombre2 == ''){
-
-        console.log('if6');
-        console.log(nombre2);
-        alert('hola6');
-        
-
-    } else if(contra2 == ''){
-
-        console.log('if6');
-        console.log(contra2);
-        alert('hola7');
-
-    } else{
-        window.location.assign("IndexHome.html");
-        console.log('else')    
-    }
-}
+// end registro()
+//function to sign in
+ // end login()

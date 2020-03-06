@@ -4,7 +4,8 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user.scaleble=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -12,32 +13,31 @@
 </head>
 
 <body>
-
+<!-- contenedor de todo el login -->
     <div id="divid01">
+        
         <h2>Registrate</h2>
-
-        <button onclick="document.getElementById('id01').style.display='block'" class="signupbtn"
+        <!-- boton que direcciona al formulario de registro -->
+        <button onclick="document.getElementById('id01').style.display='block'" class="signupbtn, botones"
             style="width:auto;">Registrate</button>
-
+        <!-- contenedor del formulario -->
         <div id="id01" class="modal">
-            <div class="imgcontainer">
-                <span onclick="document.getElementById('id02').style.display='none'" class="close"
-                    title="Close Modal">&times;</span>
-            </div>
-            <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="modal-content animate" method="post">
                 <div class="container">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                            title="Close Modal">&times;</span>
+                    </div>
                     <h1>Crea una cuenta</h1>
                     <p>Por favor llena los espacios para crear tu cuenta.</p>
                     <hr>
+                    <!-- todos los label que se usan para el formulario -->
                     <div class="signup-main">
                         <label for="name"><b></b></label>
                         <input id="info" type="text" placeholder="Ingresa Nombre" name="name" required>
 
-                        <label for="lastname"><b></b></label>
-                        <input id="info2" type="text" placeholder="Ingresa Apellido" name="lastname" required>
-
                         <label for="email"><b></b></label>
-                        <input id="info3" type="text" placeholder="Ingresa Correo" name="email" required> <br>
+                        <input id="info3" type="text" placeholder="Ingresa Correo" name="email" required>
 
                         <label for="psw"><b></b></label>
                         <input id="info4" type="password" placeholder="Ingresa Contraseña" name="psw" required>
@@ -46,17 +46,20 @@
                         <input id="info5" type="password" placeholder="Repite Contraseña" name="psw-repeat" required>
                     </div>
 
-                    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.
+                    
+                    <p>Al crear esta cuenta, aceptas nuestros <a href="" style="color:dodgerblue">Terminos y
+                            condiciones</a>.
                     </p>
 
-                    <button id="ingresar" type="submit" class="signupbtn"
-                        onclick="redirect(info, info2, info3, info4, info5)">Ingresar</button>
-
+                    <!-- boton que direcciona al home -->
+                    <button id="ingresar" type="" class="signupbtn botones"
+                        onclick="registro()">Ingresar</button>
+                    <!-- boton de cancelar -->
                     <button type="button" onclick="document.getElementById('id01').style.display='none'"
                         class="cancelbtn">Cancelar</button>
 
                 </div>
-            </form>
+            </div>
         </div>
 
 
@@ -64,55 +67,46 @@
 
         <h2>o</h2>
         <h2>Inicia Sesion</h2>
-
+        <!-- boton para iniciar sesion -->
         <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;"
-            class="loginbtn">Inicia Sesion
+            class="loginbtn, botones">Inicia Sesion
         </button>
-
+        <!-- contenedor del formulario del login -->
         <div id="id02" class="modal">
-
-            <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="modal-content animate" method="post">
                 <div class="imgcontainer">
+                    <!--  imagen de avatar -->
                     <span onclick="document.getElementById('id02').style.display='none'" class="close"
                         title="Close Modal">&times;</span>
                     <img src="img/images.jpeg" alt="Avatar" class="avatar">
+                    <h2>Inicia Sesion</h2>
                 </div>
 
                 <div class="container">
-
+                    <!-- los espacios en donde se ingresan los datos -->
                     <div class="signup-menu">
                         <label for="name"><b></b></label>
-                        <input id="info6" type="text" placeholder="Ingresa Nombre" onfocus="this.value = '';"
-                            onblur="if (this.value == '')" {this.value='name' ;} name="name" required>
+                        <input id="info6" type="text" placeholder="Ingresa Correo" name="name" required>
 
-                        <label for="psw"><b></b></label>
-                        <input id="info7" type="password" placeholder="Ingresa Contraseña" onfocus="this.value = '';"
-                            onblur="if (this.value == '')" {this.value='psw' ;} name="psw" required>
+                        <label for="passwd"><b></b></label>
+                        <input id="info7" type="password" placeholder="Ingresa Contraseña" name="psw" required>
                     </div>
-
-                    <button type="submit" onclick="redirect2(info6, info7)">Ingresar</button>
-                    <label>
+                    <!-- boton para iniciar sesion -->
+                    <button class="botones" type="submit" onclick="login()">Ingresar</button>
+                    <label style="margin: 2px;">
                         <input type="checkbox" checked="checked" name="remember"> Remember me
                     </label>
 
                 </div>
 
                 <div class="container">
+                    <!-- boton de cancelar -->
                     <button type="button" onclick="document.getElementById('id02').style.display='none'"
                         class="cancelbtn">Cancelar</button>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
